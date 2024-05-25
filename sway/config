@@ -32,6 +32,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
 output * bg /usr/share/backgrounds/default.png fill
+
 #
 # Example configuration:
 #
@@ -58,6 +59,15 @@ input type:keyboard {
   # xkb_variant ",qwerty"
   xkb_options grp:alt_shift_toggle 
 }
+# input type:touchpad {
+#     tap enabled
+#     natural_scroll disabled
+#     accel_profile adaptive
+#     dwt enabled
+#     pointer_accel 0.6 # set mouse sensitivity (between -1 and 1)
+# }
+bindsym $mod+Escape exec swaylock
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -208,6 +218,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+#
+# Screen utils:
+#
+bindsym $mod+Shift+S exec sway-interactive-screenshot
+# bindsym $mod+Shift+W exec sway-interactive-screenshot --video
+
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d
@@ -230,3 +246,4 @@ bindsym $mod+r mode "resize"
 # the trick, it's all in the `wordexp(3)`.
 #
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+# include catppuccin-mocha
