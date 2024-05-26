@@ -36,13 +36,13 @@
 @define-color unfocused	@bg2;
 @define-color focused	@braqua;
 @define-color inactive	@purple;
-@define-color sound	@brpurple;
-@define-color network	@purple;
+@define-color sound	@bryellow;
+@define-color network	@blue;
 @define-color memory	@braqua;
-@define-color cpu	@green;
-@define-color temp	@brgreen;
-@define-color layout	@bryellow;
-@define-color battery	@aqua;
+@define-color cpu	@braqua;
+@define-color temp	@braqua;
+@define-color layout	@brpurple;
+@define-color battery	@green;
 @define-color date	@black;
 @define-color time	@white;
 
@@ -63,8 +63,8 @@
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
 	font-family: "JetbrainsMono Nerd Font";
-	font-size: 11pt;
-	/*font-weight: bold;*/
+	font-size: 10pt;
+	font-weight: bold;
 }
 
 /* Each module */
@@ -172,7 +172,7 @@
 
 #cpu {
 	background: @cpu;
-	color: @white;
+	color: @black;
 }
 
 #temperature {
@@ -187,7 +187,7 @@
 
 #battery {
 	background: @battery;
-	color: @white;
+	color: @black;
 }
 
 #tray {

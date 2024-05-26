@@ -15,18 +15,18 @@
         "sway/window"
     ],
     "modules-right": [
-        "idle_inhibitor",
-        "pulseaudio",
         "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
-        "backlight",
+        // "backlight",
         "sway/language",
+        "pulseaudio",
         "battery",
         "clock",
-        "tray"
+        "tray",
+        "idle_inhibitor",
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -130,8 +130,8 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format": "{percent}%",
+        // "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
     },
     "battery": {
         "states": {
@@ -141,7 +141,7 @@
         },
         "format": "{time} | {capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         // "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -162,6 +162,12 @@
         "power-saver": ""
       }
     },
+    "sway/language": {
+		"format": "{}",
+		"min-length": 2,
+		"on-click": "swaymsg 'input * xkb_switch_layout next'",
+		"tooltip": false
+	},
     // "network": {
     //     // "interface": "wlp2*", // (Optional) To force the use of this interface
     //     "format-wifi": "{essid} ({signalStrength}%) ",
@@ -174,16 +180,17 @@
     "network": {
 		// "family": "ipv6",
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "{essid} {frequency} ↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+		"format-wifi": "↓{bandwidthDownBits} ↑{bandwidthUpBits}",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "Disconnected ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
-		"interval": 5
+        "tooltip-format": "{essid} {frequency}Hz",
+		"interval": 3
 	},
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -191,8 +198,8 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",

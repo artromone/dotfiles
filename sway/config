@@ -247,4 +247,10 @@ bindsym $mod+Shift+S exec sway-interactive-screenshot
 # the trick, it's all in the `wordexp(3)`.
 #
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
-# include catppuccin-mocha
+
+# Window
+default_border none
+default_floating_border none
+titlebar_padding 1
+font pango: monospace 0.001
+titlebar_border_thickness 0
