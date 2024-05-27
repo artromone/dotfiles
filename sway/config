@@ -225,6 +225,10 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+S exec sway-interactive-screenshot
 # bindsym $mod+Shift+W exec sway-interactive-screenshot --video
 
+bindsym Ctrl+Space exec echo -n | dmenu -p "ticktask:" | xargs -0 ticktask \
+       && notify-send ticktask -t 1000 sent \
+       || notify-send ticktask -u critical -t 2000 "not sent"
+
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d
@@ -254,3 +258,19 @@ default_floating_border none
 titlebar_padding 1
 font pango: monospace 0.001
 titlebar_border_thickness 0
+
+# Window rules
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
+
+# Run windows on start
+workspace number 1
+exec kitty
+
+workspace number 3
+exec telegram-desktop
+
+workspace number 4
+exec kitty
+
+workspace number 2
+exec brave-browser
