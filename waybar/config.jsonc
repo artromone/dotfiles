@@ -12,11 +12,11 @@
         "sway/scratchpad"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/window",
+        "privacy",
     ],
     "modules-right": [
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
@@ -24,6 +24,7 @@
         "sway/language",
         "pulseaudio",
         "battery",
+        "power-profiles-daemon",
         "clock",
         "tray",
         "idle_inhibitor",
@@ -101,17 +102,35 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    // "clock": {
-    //     // "timezone": "America/New_York",
-    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    //     "format-alt": "{:%Y-%m-%d}"
-    // },
     "clock": {
-		"interval": 1,
-		"format": "{:%H:%M:%S}",
-     	"tooltip-format": "<big>{:%d.%m.%Y}</big>\n<tt><small>{calendar}</small></tt>",
-		// "format-alt": "{:%Y-%m-%d}"
-	},
+// 	"interval": 1,
+    // 	"format": "{:%H:%M:%S}",
+    // 	// "format-alt": "{:%Y-%m-%d}"
+ //     	"tooltip-format": "<big>{:%d.%m.%Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_down",
+                    "on-scroll-down": "shift_up"
+                    }
+    },
     "cpu": {
         "format": "CPU:{usage}%",
         "tooltip": true
@@ -139,11 +158,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{time} | {capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
+        "format": "{time} | {capacity}%",
+        "format-full": "{capacity}%",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        // "format-alt": "{time} {icon}",
+        "format-alt": "{icon} ",
+"tooltip-format": "Health: {health}% | Draw: {power}W", 
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -186,7 +206,7 @@
 		"format-disconnected": "Disconnected ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{essid} {frequency}Hz",
-		"interval": 3
+		// "interval": 3
 	},
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -218,5 +238,39 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+"privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
+},
+"power-profiles-daemon": {
+  "format": "{icon} ",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+// "min-length": 3,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
 }

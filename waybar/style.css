@@ -78,6 +78,8 @@
 #pulseaudio,
 #temperature,
 #tray,
+#power-profiles-daemon,
+#privacy,
 #backlight,
 #idle_inhibitor,
 #disk,
@@ -189,9 +191,12 @@
 	background: @battery;
 	color: @black;
 }
+#power-profiles-daemon {
+	background: @battery;
+	color: @black;
+}
 
 #tray {
-	background: @date;
 }
 
 #clock.date {
@@ -202,6 +207,9 @@
 #clock.time {
 	background: @time;
 	color: @black;
+}
+
+#privacy {
 }
 
 #custom-arrow1 {
