@@ -45,7 +45,6 @@
 @define-color battery	@green;
 @define-color date	@black;
 @define-color time	@white;
-
 /* Reset all styles */
 * {
 	border: none;
@@ -62,8 +61,8 @@
 #waybar {
 	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
 	color: @white;
-	font-family: "JetbrainsMono Nerd Font";
-	font-size: 10pt;
+	font-family:"JetbrainsMono Nerd Font";
+	font-size: 12pt;
 	font-weight: bold;
 }
 
