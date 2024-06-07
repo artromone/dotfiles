@@ -227,7 +227,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+S exec sway-interactive-screenshot
 # bindsym $mod+Shift+W exec sway-interactive-screenshot --video
 
-bindsym Ctrl+Space exec echo -n | dmenu \
+bindsym Alt+Space exec echo -n | dmenu \
        -fn "JetbrainsMono Nerd Font:20" \
        -p "ticktask:" | xargs -0 ticktask \
        && notify-send ticktask -t 1000 sent \
@@ -257,11 +257,11 @@ bindsym Ctrl+Space exec echo -n | dmenu \
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 # Window
-default_border none
-default_floating_border none
-titlebar_padding 1
-font pango: monospace 0.001
-titlebar_border_thickness 0
+# default_border none
+# default_floating_border none
+# titlebar_padding 1
+# font pango: monospace 0.001
+# titlebar_border_thickness 0
 
 # Window rules
 # for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
