@@ -263,18 +263,25 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 # font pango: monospace 0.001
 # titlebar_border_thickness 0
 
+default_border pixel 2
+default_floating_border none
+hide_edge_borders --i3 none
+
+gaps inner 5
+smart_gaps on
+
 # Window rules
 # for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
 
 # Run windows on start
-workspace number 1
-exec kitty
-
-workspace number 3
-exec telegram-desktop
-
-workspace number 4
-exec kitty
-
-workspace number 2
-exec brave-browser
+# workspace number 1
+# exec kitty
+#
+# workspace number 3
+# exec telegram-desktop
+#
+# workspace number 4
+# exec kitty
+#
+# workspace number 2
+# exec brave-browser
