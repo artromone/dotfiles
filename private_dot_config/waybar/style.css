@@ -1,0 +1,148 @@
+@keyframes blink-critical {
+	to {
+		/*color: @white;*/
+		background-color: @critical;
+	}
+}
+
+/* Colors (gruvbox) */
+@define-color black	#282828;
+@define-color red	#cc241d;
+@define-color green	#98971a;
+@define-color yellow	#d79921;
+@define-color blue	#458588;
+@define-color purple	#b16286;
+@define-color aqua	#689d6a;
+@define-color gray	#a89984;
+@define-color brgray	#928374;
+@define-color brred	#fb4934;
+@define-color brgreen	#b8bb26;
+@define-color bryellow	#fabd2f;
+@define-color brblue	#83a598;
+@define-color brpurple	#d3869b;
+@define-color braqua	#8ec07c;
+@define-color white	#ebdbb2;
+@define-color bg2	#181818;
+
+@define-color warning 	@bryellow;
+@define-color critical	@red;
+@define-color mode	@black;
+@define-color unfocused	@bg2;
+@define-color focused	@braqua;
+@define-color inactive	@purple;
+@define-color sound	@bryellow;
+@define-color network	@blue;
+@define-color memory	@braqua;
+@define-color cpu	@braqua;
+@define-color temp	@braqua;
+@define-color layout	@brpurple;
+@define-color battery	@green;
+@define-color date	@black;
+@define-color time	@white;
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+	icon-shadow: none;
+}
+
+/* The whole bar */
+#waybar {
+	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
+	color: @white;
+	font-family:"JetbrainsMono Nerd Font";
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+/* Each module */
+#battery,
+#clock,
+#language,
+#mode,
+#privacy,
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor {
+	padding-left: 10pt;
+	padding-right: 10pt;
+}
+/* Each critical module */
+#mode,
+#battery.critical.discharging {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-critical;
+	animation-duration: 1s;
+}
+/* Each warning */
+#battery.warning.discharging {
+	color: @warning;
+}
+
+/* Current sway mode (resize etc) */
+#mode {
+	color: @white;
+	background: @mode;
+}
+
+/* Workspaces stuff */
+#workspaces button {
+	/*font-weight: bold;*/
+	padding-left: 5pt;
+	padding-right: 5pt;
+	color: @white;
+	/* background: @unfocused; */
+}
+/* Inactive (on unfocused output) */
+#workspaces button.visible {
+	color: @white;
+	background: @inactive;
+}
+/* Active (on focused output) */
+#workspaces button.focused {
+	color: @black;
+	background: @focused;
+}
+/* Contains an urgent window */
+#workspaces button.urgent {
+	color: @black;
+	background: @warning;
+}
+/* Style when cursor is on the button */
+#workspaces button:hover {
+	background: @black;
+	color: @white;
+}
+
+#language {
+	color: @focused;
+}
+
+#battery {
+    color: @white;
+}
+
+#idle_inhibitor {
+    color: @white;
+}
+
+#clock.date {
+	color: @white;
+}
+
+#clock.time {
+	color: @black;
+}
+
+#privacy {
+	color: @focused;
+}

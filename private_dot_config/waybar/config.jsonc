@@ -1,0 +1,197 @@
+{
+   "layer":"top",
+   // "position":"bottom",
+   "modules-left":[
+      "sway/workspaces",
+      "sway/mode",
+      "sway/scratchpad",
+      "tray"
+   ],
+   "modules-center":[
+      // "sway/window",
+      "privacy"
+   ],
+   "modules-right":[
+      "custom/zypper",
+      "sway/language",
+      "network",
+      "bluetooth",
+      "pulseaudio",
+      "battery", "battery#bat2", 
+      "clock",
+      "custom/notification"
+      // "idle_inhibitor"
+   ],
+  "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{index}",
+        // "format": "{index} {icon}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "custom/zypper": {
+        "format": "{} ",
+        "interval": 3600,
+        "exec": "zypper lu | grep 'v |' | wc -l; echo 'packages to update'",
+        "exec-if": "exit 0",
+        "on-click": "exec kitty -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+        "signal": 8
+    },
+   "sway/mode":{
+      "format":"<span style=\"italic\">{}</span>"
+   },
+   "network": {
+    "max-length": 20,
+    "format-wifi": "{essid}",
+    "format-ethernet": "{ipaddr}/{cidr}",
+	  "format-linked": "{ifname} (No IP)",
+	  "format-disconnected": "Disconnected ⚠",
+      "tooltip-format": "{essid} {frequency}Hz\n{ifname}: {ipaddr}/{cidr}",
+      "on-click": "kitty --class=floating-terminal -e 'nmtui'"
+   },
+"bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "kitty --class=floating-terminal -e 'bluetuith'"
+},
+    "pulseaudio": {
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon}: {volume}% :{format_source}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "kitty --class=floating-terminal -e 'pulsemixer'"
+    },
+   "sway/scratchpad":{
+      "format":"{icon} {count}",
+      "show-empty":false,
+      "format-icons":[
+         "",
+         " "
+      ],
+      "tooltip":true,
+      "tooltip-format":"{app}: {title}"
+   },
+   "idle_inhibitor":{
+      "format":"{icon}",
+      "format-icons":{
+         "activated":"",
+         "deactivated":""
+      }
+   },
+   "clock":{
+      "format":"{:%H:%M}",
+      "format-alt":"{:%A, %B %d, %Y (%R)}",
+      "tooltip-format":"<tt><small>{calendar}</small></tt>",
+      "calendar":{
+         "mode":"year",
+         "mode-mon-col":3,
+         "weeks-pos":"left",
+         "on-scroll":1,
+         "format":{
+            "months":"<span color='#ffead3'><b>{}</b></span>",
+            "days":"<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks":"<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays":"<span color='#ffcc66'><b>{}</b></span>",
+            "today":"<span color='#ff6699'><b><u>{}</u></b></span>"
+         }
+      },
+      "actions":{
+         "on-click-right":"mode",
+         "on-click-forward":"tz_up",
+         "on-click-backward":"tz_down",
+         "on-scroll-up":"shift_down",
+         "on-scroll-down":"shift_up"
+      }
+   },
+   "battery":{ 
+      "states":{
+         "good":95,
+         "warning":30,
+         "critical":15
+      },
+      "format":"{time}({capacity}%)",
+      "format-time":"{H}:{m}",
+      "format-full":"{capacity}%",
+      "format-charging":"{capacity}% ",
+      "format-plugged":"{capacity}% ",
+      "format-alt":"{icon} ",
+      "tooltip-format":"Health: {health}% | Draw: {power}W",
+      "format-good":"",
+      "format-full":"",
+      "format-icons":[
+         "",
+         "",
+         "",
+         "",
+         ""
+      ]
+   },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+   "sway/language":{
+      "format":"{}",
+      "min-length":2,
+      "on-click":"swaymsg 'input * xkb_switch_layout next'",
+      "tooltip":false
+   },
+   "privacy":{
+      "icon-spacing":4,
+      "icon-size":18,
+      "transition-duration":250,
+      "modules":[
+         {
+            "type":"screenshare",
+            "tooltip":true,
+            "tooltip-icon-size":24
+         },
+         {
+            "type":"audio-out",
+            "tooltip":true,
+            "tooltip-icon-size":24
+         },
+         {
+            "type":"audio-in",
+            "tooltip":true,
+            "tooltip-icon-size":24
+         }
+      ]
+   },
+    "custom/notification": {
+	"tooltip": true,
+	"format": "{icon}",
+	"format-icons": {
+	     "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+	     "none": " ",
+	     "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+	     "dnd-none": " "
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+	"escape": true
+   }
+}
