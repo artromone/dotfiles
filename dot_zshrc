@@ -1,0 +1,54 @@
+export ZSH="$HOME/.oh-my-zsh"
+source headline.zsh-theme
+# ZSH_THEME="headline"
+zstyle ':omz:update' mode reminder # just remind me to update when it's time
+
+# CASE_SENSITIVE="true"
+# HYPHEN_INSENSITIVE="true" # Case-sensitive completion must be off. _ and - will be interchangeable.
+# DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_LS_COLORS="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# HIST_STAMPS="mm/dd/yyyy"
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+plugins=(
+    copyfile
+    copypath
+    dirhistory
+    extract
+    fasd
+    gitignore
+    golang
+    mercurial
+    sudo
+    zsh-vi-mode
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Atuin
+# . "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+# Jump
+[[ -s /home/art/.autojump/etc/profile.d/autojump.sh ]] && source /home/art/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+# FASD
+eval "$(fasd --init posix-alias zsh-hook)"
+
+# Paths
+export PATH=$PATH:/home/art/.local/bin
+export PATH=$PATH:/home/art/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/art/go/bin
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
+
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias bat="bat --theme=base16"
