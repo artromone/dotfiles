@@ -31,9 +31,6 @@ source $ZSH/oh-my-zsh.sh
 # Atuin
 # . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
-# Jump
-[[ -s /home/art/.autojump/etc/profile.d/autojump.sh ]] && source /home/art/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 # FASD
 eval "$(fasd --init posix-alias zsh-hook)"
 

@@ -292,6 +292,7 @@ exec_always {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
     tail -f $SWAYSOCK.wob | $wob
+    gammastep-indicator
     # swaync --style /home/art/.config/swaync/style.css --config /home/art/.config/swaync/config.json
 }
 
