@@ -25,7 +25,7 @@ output * bg wallpapers/wallpaper.jpg fill
 
 ### Idle configuration
 # Lockscreen configuration
-set $screenlock 'swaylock --config /etc/swaylock/openSUSEway.conf'
+set $screenlock 'swaylock --config /home/art/.config/swaylock/config.conf'
 # Idle configuration
 exec swayidle -w \
          timeout 900 $screenlock \
@@ -79,7 +79,7 @@ bindsym --no-warn XF86AudioPrev exec playerctl previous
     bindsym $mod+Shift+c reload
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+Escape exec swaylock
+    bindsym $mod+Escape exec $screenlock
 
     # Move your focus around
     bindsym $mod+$left focus left
