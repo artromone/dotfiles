@@ -12,14 +12,14 @@
       "privacy"
    ],
    "modules-right":[
-      "custom/zypper",
+      // "custom/zypper",
       "sway/language",
       "network",
       "bluetooth",
       "pulseaudio",
       "battery", "battery#bat2", 
-      "clock",
-      "custom/notification"
+      "clock"
+      // "custom/notification"
       // "idle_inhibitor"
    ],
   "sway/workspaces": {
