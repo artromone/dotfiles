@@ -7,8 +7,8 @@ vim.api.nvim_create_autocmd("DirChanged", { callback = function() vcs_utils.set_
 
 vim.g.cmake_generate_options = {
 '-DCMAKE_GENERATOR:STRING=Ninja', 
-'-DCMAKE_CXX_COMPILER=/usr/bin/g++', 
-'-DCMAKE_PREFIX_PATH:PATH=/opt/qt/Qt5.11.0/5.11.0/gcc_64;',--/opt/qt/Qt6.7.2/6.7.2/gcc_64;/opt/protobuf/static',
+-- '-DCMAKE_CXX_COMPILER=/usr/bin/g++',
+'-DCMAKE_PREFIX_PATH:PATH=/opt/qt/Qt5.11.0/5.11.0/gcc_64;/opt/boost/;/opt/protobuf/static;',--/opt/qt/Qt6.7.2/6.7.2/gcc_64;',
 }
 vim.g.cmake_build_options = { '--', '-j20', }
 
