@@ -43,8 +43,13 @@ map("n", "<Leader>l", "<C-w>l", default_opts)
 -- Navigation
 -- map('n', '<F3>', ':BufferLineCycleNext<CR>', default_opts)
 -- map('n', '<F2>', ':BufferLineCyclePrev<CR>', default_opts)
-
-map('n', '<F2>', ':ToggleTerm<CR>', default_opts)
+function _G.set_terminal()
+    local shell = os.getenv("SHELL") or "/bin/bash"
+    local Terminal = require('toggleterm.terminal').Terminal
+    local new_term = Terminal:new({ cmd = shell, hidden = true })
+    new_term:toggle()
+end
+map('n', '<F2>', "<cmd>lua set_terminal()<CR>", default_opts)
 map('n', '<F3>', ':LazyGit<CR>', default_opts)
 
 map('n', '<F10>', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', default_opts)
