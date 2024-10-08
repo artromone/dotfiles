@@ -14,6 +14,7 @@
    "modules-right":[
       // "custom/zypper",
       "sway/language",
+      "custom/weather",
       "network",
       "bluetooth",
       "pulseaudio",
@@ -178,6 +179,13 @@
          }
       ]
    },
+   "custom/weather": {
+       "format": "{}°",
+       "tooltip": true,
+       "interval": 3600,
+       "exec": "wttrbar",
+       "return-type": "json"
+    },
     "custom/notification": {
 	"tooltip": true,
 	"format": "{icon}",
