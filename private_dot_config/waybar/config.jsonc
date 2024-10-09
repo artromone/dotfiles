@@ -102,7 +102,7 @@
    },
    "clock":{
       "format":"{:%H:%M}",
-      "format-alt":"{:%A, %B %d, %Y (%R)}",
+      "format-alt":"{:%d.%m.%y  %A  %R}",
       "tooltip-format":"<tt><small>{calendar}</small></tt>",
       "calendar":{
          "mode":"year",
