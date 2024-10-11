@@ -10,7 +10,7 @@ local default_opts = {noremap = true, silent = true}
 
 -- General
 vim.g.mapleader = ' '
-
+map('n', '<Esc>', ':noh<CR>', default_opts)
 map('i', 'jj', '<Esc>', {noremap = true})
 map('n', 's', '<Nop>', default_opts)
 -- map('n', 'c', '<Nop>', default_opts)
