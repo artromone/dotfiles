@@ -6,3 +6,4 @@ require('keymaps.keymaps')
 require('settings.general')
 
 require('theme.onedark').use()
+-- vim.cmd('colorscheme poimandres')

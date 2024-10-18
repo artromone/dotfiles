@@ -60,6 +60,7 @@ return {
         'nvim/folke-edgy_nvim.lua',
         -- 'nvim/gelguy-wilder_nvim.lua',
 
+        'colorscheme/olivercederborg-poimandres_nvim.lua',
         'colorscheme/navarasu-onedark_nvim.lua',
     },
     disabled = {
