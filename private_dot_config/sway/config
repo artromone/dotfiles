@@ -6,7 +6,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term wezterm
 
 set $rofi_cmd rofi -terminal '$term'
 set $menu $rofi_cmd -show combi -combi-modes drun -modes combi
@@ -173,7 +173,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-
 ### Screen utils:
 # Screenshots
 ## Area selection shortcuts
@@ -221,7 +220,7 @@ mode $screenshot {
     bindsym Escape mode "default"
     bindsym $mod+Print mode "default"
 }
-bindsym $mod+Print mode $screenshot
+bindsym Print mode $screenshot
 
 
 ### Window
