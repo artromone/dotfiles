@@ -1,130 +1,98 @@
+@define-color black #282C34;
+@define-color red #4B4B4B;
+@define-color green #6D6D6D;
+@define-color yellow #AFAFAF;
+@define-color blue #5C5C5C;
+@define-color purple #7E7E7E;
+@define-color aqua #4C4C4C;
+@define-color white #FFFFFF;
+
 @keyframes blink-critical {
-	to {
-		/*color: @white;*/
-		background-color: @critical;
-	}
+    to {
+        background-color: @red;
+    }
 }
-
-/* Colors (gruvbox) */
-@define-color black	    #282C34;
-@define-color red	    #BE5046;
-@define-color green	    #98C379;
-@define-color yellow	#D19A66;
-@define-color blue	    #61AFEF;
-@define-color purple	#C678DD;
-@define-color aqua	    #56B6C2;
-@define-color gray	    #a89984;
-@define-color brgray	#928374;
-@define-color brred	    #E06C75;
-@define-color brgreen	#A5E075;
-@define-color bryellow	#E5C07B;
-@define-color brblue	#4DC4FF;
-@define-color brpurple	#DE73FF;
-@define-color braqua	#4CD1E0;
-@define-color white	    #ABB2BF;
-@define-color bg2	    #282C34;
-
-@define-color warning 	@bryellow;
-@define-color critical	@red;
-@define-color mode	    @black;
-@define-color unfocused	@bg2;
-@define-color focused	@braqua;
-@define-color inactive	@purple;
-@define-color sound	    @bryellow;
-@define-color network	@blue;
-@define-color memory	@braqua;
-@define-color cpu   	@braqua;
-@define-color temp	    @braqua;
-@define-color layout	@brpurple;
-@define-color battery	@green;
-@define-color date	    @black;
-@define-color time	    @white;
 
 /* Reset all styles */
 * {
-	border: none;
-	border-radius: 0;
-	min-height: 0;
-	margin: 0;
-	padding: 0;
-	box-shadow: none;
-	text-shadow: none;
-	icon-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none;
 }
 
 /* The whole bar */
 #waybar {
-	background: rgba(40, 40, 40, 0.8784313725); /* #282828e0 */
-	color: @white;
-	font-family:"JetbrainsMono Nerd Font";
-	font-size: 12pt;
-	font-weight: bold;
+    background: rgba(40, 40, 40, 0.8784313725);
+    color: @white;
+    font-family:"JetbrainsMono Nerd Font";
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 /* Each module */
-#battery,
-#clock,
-#language,
-#mode,
-#privacy,
-#network,
-#bluetooth,
-#pulseaudio,
-#idle_inhibitor {
-	padding-left: 10pt;
-	padding-right: 10pt;
+#battery, #clock, #language, #mode, #privacy, #network, #bluetooth, #pulseaudio, #idle_inhibitor {
+    padding-left: 10pt;
+    padding-right: 10pt;
 }
+
 /* Each critical module */
-#mode,
-#battery.critical.discharging {
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-name: blink-critical;
-	animation-duration: 1s;
+#mode, #battery.critical.discharging {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: blink-critical;
+    animation-duration: 1s;
 }
+
 /* Each warning */
 #battery.warning.discharging {
-	color: @warning;
+    color: @red;
 }
 
 /* Current sway mode (resize etc) */
 #mode {
-	color: @white;
-	background: @mode;
+    color: @white;
+    background: @black;
 }
 
 /* Workspaces stuff */
 #workspaces button {
-	/*font-weight: bold;*/
-	padding-left: 5pt;
-	padding-right: 5pt;
-	color: @white;
-	/* background: @unfocused; */
+    padding-left: 5pt;
+    padding-right: 5pt;
+    color: @white;
 }
+
 /* Inactive (on unfocused output) */
 #workspaces button.visible {
-	color: @white;
-	background: @inactive;
+    color: @white;
+    background: @red;
 }
+
 /* Active (on focused output) */
 #workspaces button.focused {
-	color: @black;
-	background: @focused;
+    color: @black;
+    background: @green;
 }
+
 /* Contains an urgent window */
 #workspaces button.urgent {
-	color: @black;
-	background: @warning;
+    color: @black;
+    background: @red;
 }
+
 /* Style when cursor is on the button */
 #workspaces button:hover {
-	background: @black;
-	color: @white;
+    background: @black;
+    color: @white;
 }
 
 #language {
-	color: @focused;
+    color: @yellow;
 }
 
 #battery {
@@ -136,13 +104,13 @@
 }
 
 #clock.date {
-	color: @white;
+    color: @white;
 }
 
 #clock.time {
-	color: @black;
+    color: @black;
 }
 
 #privacy {
-	color: @focused;
+    color: @yellow;
 }

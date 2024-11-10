@@ -55,3 +55,23 @@ fi
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias bat="bat --theme=base16"
+
+# MY_THEME
+
+export MY_THEME_BLACK="#282C34"
+export MY_THEME_RED="#4B4B4B"
+export MY_THEME_GREEN="#6D6D6D"
+export MY_THEME_YELLOW="#AFAFAF"
+export MY_THEME_BLUE="#5C5C5C"
+export MY_THEME_PURPLE="#7E7E7E"
+export MY_THEME_AQUA="#4C4C4C"
+export MY_THEME_GRAY="#A89984"
+export MY_THEME_BRGRAY="#928374"
+export MY_THEME_BRRED="#B0B0B0"
+export MY_THEME_BRGREEN="#C0C0C0"
+export MY_THEME_BRYELLOW="#D3D3D3"
+export MY_THEME_BRBLUE="#A9A9A9"
+export MY_THEME_BRPURPLE="#B8B8B8"
+export MY_THEME_BRAQUA="#B0B0B0"
+export MY_THEME_WHITE="#FFFFFF"
+export MY_THEME_BG2="#282C34"
