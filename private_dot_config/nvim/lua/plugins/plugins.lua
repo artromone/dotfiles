@@ -25,11 +25,11 @@ return {
         'code/cpp/d86leader-vim_cpp_helper.lua',
         'code/cpp/cdelledonne-vim_cmake.lua',
         
+        'code/Exafunction-codeium_nvim.lua',
         'code/brenoprata10-nvim_highlight_colors.lua',
         -- 'code/honza-vim_snippets.lua',
         'code/echasnovski-mini_move.lua',
         'code/lukas_reineke-indent_blankline_nvim.lua',
-        -- 'code/Exafunction-codeium_vim.lua',
         'code/HiPhish-rainbow_delimiters_nvim.lua',
         'code/nvim_treesitter-nvim_treesitter.lua',
         'code/mhartington-formatter_nvim.lua',

@@ -300,22 +300,4 @@ exec_always {
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 include ~/config/sway/config.d/*
-
-# MY_THEME
-set $black ${MY_THEME_BLACK}
-set $red ${MY_THEME_RED}
-set $green ${MY_THEME_GREEN}
-set $yellow ${MY_THEME_YELLOW}
-set $blue ${MY_THEME_BLUE}
-set $purple ${MY_THEME_PURPLE}
-set $aqua ${MY_THEME_AQUA}
-set $gray ${MY_THEME_GRAY}
-set $brgray ${MY_THEME_BRGRAY}
-set $brred ${MY_THEME_BRRED}
-set $brgreen ${MY_THEME_BRGREEN}
-set $bryellow ${MY_THEME_BRYELLOW}
-set $brblue ${MY_THEME_BRBLUE}
-set $brpurple ${MY_THEME_BRPURPLE}
-set $braqua ${MY_THEME_BRAQUA}
-set $white ${MY_THEME_WHITE}
-set $bg2 ${MY_THEME_BG2}
+include "$HOME/.cache/wal/colors-sway"
