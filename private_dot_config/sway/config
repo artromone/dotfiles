@@ -19,6 +19,10 @@ bar {
 ### Output configuration
 output * bg wallpapers/wallpaper.jpg fill
 
+# output eDP-1 {
+#     mode 1920x1200@60Hz
+#     adaptive_sync on
+# }
 # output 'Unknown' resolution 1920x1200 position 0,0 scale 1 adaptive_sync off
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -200,20 +204,15 @@ set $screenshot_focused_output_clipboard grim -o $($focused_output) - | wl-copy
 set $screenshot "Screenshot: (f) full, (s) select window, (a) select area, (w) focused window, (o) focused output [Ctrl+ saves to clipboard]"
 mode $screenshot {
     # Full
-    bindsym f exec $screenshot_full; mode "default"
-    bindsym Ctrl+f exec $screenshot_full_clipboard; mode "default"
+    bindsym f exec $screenshot_full_clipboard; mode "default"
     # Selected window
-    bindsym s exec $screenshot_selected_window; mode "default"
-    bindsym Ctrl+s exec $screenshot_selected_window_clipboard; mode "default"
+    bindsym s exec $screenshot_selected_window_clipboard; mode "default"
     # Selected area
-    bindsym a exec $screenshot_selected_area; mode "default"
-    bindsym Ctrl+a exec $screenshot_selected_area_clipboard; mode "default"
+    bindsym a exec $screenshot_selected_area_clipboard; mode "default"
     # Focused window
-    bindsym w exec $screenshot_focused_window; mode "default"
-    bindsym Ctrl+w exec $screenshot_focused_window_clipboard; mode "default"
+    bindsym w exec $screenshot_focused_window_clipboard; mode "default"
     # Focused output
-    bindsym o exec $screenshot_focused_output; mode "default"
-    bindsym Ctrl+o exec $screenshot_focused_output_clipboard; mode "default"
+    bindsym o exec $screenshot_focused_output_clipboard; mode "default"
 
     # Exit screenshot mode menu
     bindsym Return mode "default"
