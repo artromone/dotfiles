@@ -29,7 +29,7 @@ output * bg wallpapers/wallpaper.jpg fill
 
 ### Idle configuration
 # Lockscreen configuration
-set $screenlock 'swaylock --config /home/art/.config/swaylock/config.conf'
+set $screenlock 'swaylock --config ~/.config/swaylock/config.conf'
 # Idle configuration
 exec swayidle -w \
          timeout 900 $screenlock \
@@ -296,7 +296,4 @@ exec_always {
     # swaync --style /home/art/.config/swaync/style.css --config /home/art/.config/swaync/config.json
 }
 
-exec /usr/libexec/polkit-gnome-authentication-agent-1
-
 include ~/config/sway/config.d/*
-include "$HOME/.cache/wal/colors-sway"

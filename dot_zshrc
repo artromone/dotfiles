@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-source headline.zsh-theme
+source "/home/art/headline.zsh-theme"
 # ZSH_THEME="headline"
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
 
