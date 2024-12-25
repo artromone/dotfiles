@@ -23,7 +23,7 @@ plugins=(
     golang
     mercurial
     sudo
-    zsh-vi-mode
+    # zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -39,12 +39,7 @@ export PATH=$PATH:/home/art/.local/bin
 export PATH=$PATH:/home/art/.cargo/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/art/go/bin
-# Perl
-PATH="/home/art/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/art/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/art/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/art/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/art/perl5"; export PERL_MM_OPT;
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
@@ -54,23 +49,4 @@ fi
 
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias bat="bat --theme=base16"
-
-# MY_THEME
-export MY_THEME_BLACK="#282C34"
-export MY_THEME_BG2="#282C34"
-export MY_THEME_RED="#df6c45"
-export MY_THEME_BRRED="#ad5436"
-export MY_THEME_GREEN="#62825D"
-export MY_THEME_BRGREEN="#9EDF9C"
-export MY_THEME_YELLOW="#e69e79"
-export MY_THEME_BRYELLOW="#b47c5f"
-export MY_THEME_BLUE="#2582dc"
-export MY_THEME_BRBLUE="#1d65aa"
-export MY_THEME_PURPLE="#4ea1dc"
-export MY_THEME_BRPURPLE="#3d7daa"
-export MY_THEME_AQUA="#82bbde"
-export MY_THEME_BRAQUA="#6591ac"
-export MY_THEME_GRAY="#d1c6d1"
-export MY_THEME_BRGRAY="#9f979f"
-export MY_THEME_WHITE="#1A1A19"
+alias bat="batcat --theme=base16"
