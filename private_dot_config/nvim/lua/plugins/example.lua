@@ -1,5 +1,5 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
--- stylua: ignore
+-- st: ignore
 if true then return {} end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
@@ -45,7 +45,7 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       -- add a keymap to browse plugin files
-      -- stylua: ignore
+      -- st: ignore
       {
         "<leader>fp",
         function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
@@ -83,7 +83,7 @@ return {
       "jose-elias-alvarez/typescript.nvim",
       init = function()
         require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
+          -- st: ignore
           vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
@@ -124,7 +124,7 @@ return {
         "html",
         "javascript",
         "json",
-        "lua",
+        ",
         "markdown",
         "markdown_inline",
         "python",
@@ -154,10 +154,10 @@ return {
 
   -- the opts function can also be used to change the default opts:
   {
-    "nvim-lualine/lualine.nvim",
+    "nvimlineline.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, {
+      table.insert(opts.sectionsline_x, {
         function()
           return "😄"
         end,
@@ -167,11 +167,11 @@ return {
 
   -- or you can return new options to override all the defaults
   {
-    "nvim-lualine/lualine.nvim",
+    "nvimlineline.nvim",
     event = "VeryLazy",
     opts = function()
       return {
-        --[[add your custom lualine config here]]
+        --[[add your customline config here]]
       }
     end,
   },
@@ -187,7 +187,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "stylua",
+        "st",
         "shellcheck",
         "shfmt",
         "flake8",
