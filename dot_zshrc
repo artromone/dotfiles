@@ -43,6 +43,8 @@ else
   export EDITOR='nvim'
 fi
 
+export BROWSER=thorium-browser
+
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias bat="batcat --theme=base16"
