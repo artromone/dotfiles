@@ -46,3 +46,5 @@ fi
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias bat="batcat --theme=base16"
+alias tree="exa -l --tree --icons"
+alias du="du --total -h --time"
