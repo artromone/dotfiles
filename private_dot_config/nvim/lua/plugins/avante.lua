@@ -5,10 +5,26 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "tune_claude",
-      auto_suggestions_provider = "tune_claude",
+      provider = "open_deepseek_v3",
+      auto_suggestions_provider = "open_deepseek_v3",
 
       vendors = {
+        ["open_deepseek_v3"] = {
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai",
+          model = "deepseek/deepseek-chat:free",
+          max_tokens = 4096,
+          -- temperature = 0.6,
+          __inherited_from = "openai",
+        },
+        ["open_deepseek_r1"] = {
+          api_key_name = "OPENROUTER_API_KEY",
+          endpoint = "https://openrouter.ai",
+          model = "deepseek/deepseek-r1:free",
+          max_tokens = 4096,
+          -- temperature = 0.6,
+          __inherited_from = "openai",
+        },
         ["tune_deepseek_v3"] = {
           api_key_name = "PROXYTUNE_API_KEY",
           endpoint = "https://proxy.tune.app",
@@ -36,8 +52,8 @@ return {
       },
       dual_boost = {
         enabled = false,
-        first_provider = "tune_deepseek_v3",
-        second_provider = "tune_deepseek_r1",
+        first_provider = "open_deepseek_v3",
+        second_provider = "open_deepseek_r1",
         prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
         timeout = 60000, -- Timeout in milliseconds
       },
