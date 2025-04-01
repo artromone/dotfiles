@@ -1,0 +1,50 @@
+export ZSH="$HOME/.oh-my-zsh"
+eval "$(starship init zsh)"
+zstyle ':omz:update' mode reminder # just remind me to update when it's time
+
+# CASE_SENSITIVE="true"
+# HYPHEN_INSENSITIVE="true" # Case-sensitive completion must be off. _ and - will be interchangeable.
+# DISABLE_MAGIC_FUNCTIONS="true"
+# DISABLE_LS_COLORS="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# HIST_STAMPS="mm/dd/yyyy"
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+plugins=(
+    copyfile
+    copypath
+    extract
+    fasd
+    gitignore
+    golang
+    sudo
+)
+
+
+eval "$(atuin init zsh)"
+eval "$(fasd --init posix-alias zsh-hook)"
+
+# Paths
+export PATH=$PATH:/home/art/.local/bin
+export PATH=$PATH:/home/art/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/art/go/bin
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
+
+export BROWSER=qutebrowser
+
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias bat="batcat --theme=base16"
+alias tree="exa -l --tree -lhs ext --icons"
+alias du="du --total -h --time"
+alias ls="exa -l"
+alias artupdate="sudo apt update && sudo apt upgrade"
