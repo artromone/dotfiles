@@ -1,0 +1,5 @@
+[[database]]
+Name = 'users'
+Provider = 'sqlite3'
+DBName = ''
+URL = 'users.db'

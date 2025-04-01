@@ -1,0 +1,14 @@
+[Added Associations]
+application/pdf=zathura-5.desktop;zathura-4.desktop;zathura-3.desktop;zathura-2.desktop;zathura.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+
+[Default Applications]
+application/pdf=zathura-5.desktop;
+text/html=qutebrowser.desktop
+x-scheme-handler/about=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/unknown=qutebrowser.desktop
