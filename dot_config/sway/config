@@ -196,7 +196,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 bindsym $mod+Alt+s exec grim -g "$(slurp)" ~/pictures/$(date +'%s_grim.png')
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
 ### Window
 font pango: JetbrainsMono Nerd Font 12
