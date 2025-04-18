@@ -7,13 +7,13 @@ local map = vim.keymap.set
 -- local augroup = vim.api.nvim_create_augroup
 -- local lsp = vim.lsp.buf
 
-local telescope = require('telescope.builtin')
+local telescope = require("telescope.builtin")
 
-local default_opts = {noremap = true, silent = true}
+local default_opts = { noremap = true, silent = true }
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
-map('v', '<Leader>p', "\"_dP", default_opts)
+map("v", "<Leader>p", '"_dP', default_opts)
 
 -- map('n', '<Leader>n', ':bn<CR>', default_opts)
 -- map('n', '<Leader>p', ':bp<CR>', default_opts)
@@ -42,35 +42,38 @@ map("n", "<Leader>l", "<C-w>l", default_opts)
 -- map('n', '<F3>', ':BufferLineCycleNext<CR>', default_opts)
 -- map('n', '<F2>', ':BufferLineCyclePrev<CR>', default_opts)
 
-map('n', '<F2>', ':ToggleTerm<CR>', default_opts)
-map('n', '<F3>', ':LazyGit<CR>', default_opts)
+map("n", "<leader>y", ":%y+<CR>", default_opts)
 
-map('n', '<F10>', ':Neotree toggle<CR>', default_opts)
-map('n', '<F11>', ':AerialToggle<CR>', default_opts)
+map("n", "<F2>", ":ToggleTerm<CR>", default_opts)
+map("n", "<F3>", ":LazyGit<CR>", default_opts)
+map("n", "<F4>", ":Trouble diagnostics<CR>", default_opts)
+map("n", "<F5>", ":DapContinue<CR>", default_opts)
+
+map("n", "<F10>", ":Neotree toggle<CR>", default_opts)
+map("n", "<F11>", ":AerialToggle<CR>", default_opts)
 -- map('n', '<F11>', '<cmd>Trouble symbols toggle focus=false<cr>', default_opts)
 
 -- map('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', default_opts)
- -- map('n', '<F4>', ':e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>', default_opts)
+-- map('n', '<F4>', ':e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>', default_opts)
 -- map('n', 'h<F4>', ':sp %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>', default_opts)
 -- map('n', 'v<F4>', ':vs %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>', default_opts)
 
 map("n", "<leader>u", "<cmd>Telescope undo<CR>", default_opts)
 
-map('n', '<leader>fl', telescope.live_grep, default_opts)
+map("n", "<leader>fl", telescope.live_grep, default_opts)
 
 -- map('n', '<A-Up>', ':split<CR>', default_opts)
 -- map('n', '<A-Down>', ':split<CR>', default_opts)
 -- map('n', '<A-Left>', ':vsplit<CR>', default_opts)
 -- map('n', '<A-Right>', ':vsplit<CR>', default_opts)
 
-map('n', '<F7>', ":Trouble diagnostics<CR>", default_opts)
 -- map("n", "<leader>;", "<cmd>lua require('memento').toggle()<CR>", default_opts)
 -- map('n', '<F9>', ':Arrow open<CR>', default_opts) -- in plugin config
 
--- map("n", "<A-Right>", "<C-w><", default_opts)
--- map("n", "<A-Left>", "<C-w>>", default_opts)
--- map("n", "<A-Up>", "<C-w>+", default_opts)
--- map("n", "<A-Down>", "<C-w>-", default_opts)
+map("n", "<A-Right>", "<C-w><", default_opts)
+map("n", "<A-Left>", "<C-w>>", default_opts)
+map("n", "<A-Up>", "<C-w>+", default_opts)
+map("n", "<A-Down>", "<C-w>-", default_opts)
 
 -- мешает find references
 -- map('n', '<leader>g', ':AerialNavToggle<CR>', default_opts)
@@ -82,8 +85,6 @@ map('n', '<F7>', ":Trouble diagnostics<CR>", default_opts)
 -- map("n", "<leader>c", ":CMakeToggle<CR><C-w>j<CR>", default_opts)
 
 -- map("n", "<Insert>", "<Plug>(CMakeStop)", default_opts)
-
-map("n", "<F5>", ":DapContinue<CR>", default_opts)
 
 -- Lsp
 -- autocmd('LspAttach', {
@@ -121,13 +122,13 @@ map("n", "<F5>", ":DapContinue<CR>", default_opts)
 
 -- Terminal go
 function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
-  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<Leader>h', [[<Cmd>wincmd h<CR>]], opts)
-  vim.keymap.set('t', '<Leader>j', [[<Cmd>wincmd j<CR>]], opts)
-  vim.keymap.set('t', '<Leader>k', [[<Cmd>wincmd k<CR>]], opts)
-  vim.keymap.set('t', '<Leader>l', [[<Cmd>wincmd l<CR>]], opts)
+  local opts = { buffer = 0 }
+  vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.keymap.set("t", "<Leader>h", [[<Cmd>wincmd h<CR>]], opts)
+  vim.keymap.set("t", "<Leader>j", [[<Cmd>wincmd j<CR>]], opts)
+  vim.keymap.set("t", "<Leader>k", [[<Cmd>wincmd k<CR>]], opts)
+  vim.keymap.set("t", "<Leader>l", [[<Cmd>wincmd l<CR>]], opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
