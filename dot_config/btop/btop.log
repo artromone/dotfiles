@@ -58,3 +58,21 @@
 
 2025/03/31 (10:44:11) | ===> btop++ v.1.4.0
 2025/03/31 (10:44:11) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/02 (21:41:49) | ===> btop++ v.1.4.0
+2025/04/02 (21:41:49) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/02 (18:48:31) | ===> btop++ v.1.2.3
+2025/04/02 (18:48:31) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2025/04/03 (17:55:57) | ===> btop++ v.1.4.0
+2025/04/03 (17:55:57) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/17 (11:32:34) | ===> btop++ v.1.2.3
+2025/04/17 (11:32:34) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2025/04/17 (11:32:37) | ===> btop++ v.1.2.3
+2025/04/17 (11:32:37) | ERROR: Exception in runner thread -> Cpu:: -> key not found
+
+2025/04/18 (16:55:19) | ===> btop++ v.1.4.0
+2025/04/18 (16:55:19) | WARNING: Intel GPU: Failed to initialize PMU
