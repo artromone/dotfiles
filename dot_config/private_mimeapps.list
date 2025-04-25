@@ -10,7 +10,7 @@ text/x-lua=org.qutebrowser.qutebrowser.desktop;
 [Default Applications]
 application/pdf=zathura-5.desktop;
 text/html=qutebrowser.desktop
-video/mp4=vlc-2.desktop;
+video/mp4=vlc-2.desktop
 x-scheme-handler/about=qutebrowser.desktop
 x-scheme-handler/http=qutebrowser.desktop
 x-scheme-handler/https=qutebrowser.desktop

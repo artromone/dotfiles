@@ -44,5 +44,6 @@
     gitnr
     wttrbar
     chezmoi
+    bluetuith
   ];
 }

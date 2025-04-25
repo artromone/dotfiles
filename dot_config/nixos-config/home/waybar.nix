@@ -26,6 +26,7 @@
           "custom/clipboard"
           "custom/weather"
           "pulseaudio"
+          "bluetooth"
           "network"
           "backlight"
           "sway/language"
@@ -160,7 +161,7 @@
           "format-linked" = "{ifname} (No IP)";
           "format-disconnected" = "Disconnected ⚠";
           "tooltip-format" = "{essid} {frequency}Hz\n{ifname}: {ipaddr}/{cidr}";
-          "on-click" = "foot --class=floating-terminal -e 'nmtui'";
+          "on-click" = "exec wezterm start --class=floating-terminal -e 'nmtui'";
         };
 
         "pulseaudio" = {
@@ -183,7 +184,7 @@
               ""
             ];
           };
-          "on-click" = "foot --class=floating-terminal -e 'pulsemixer'";
+          "on-click" = "exec wezterm start --class=floating-terminal -e 'pulsemixer'";
         };
 
         "bluetooth" = {
@@ -197,7 +198,7 @@
           "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
           "tooltip-format-enumerate-connected-battery" =
             "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-          "on-click" = "kitty --class=floating-terminal -e 'bluetuith'";
+          "on-click" = "exec wezterm start --class=floating-terminal -e 'bluetuith'";
         };
 
         "custom/weather" = {
