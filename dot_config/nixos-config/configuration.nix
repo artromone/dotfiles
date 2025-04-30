@@ -11,5 +11,6 @@
   ];
 
   home-manager.backupFileExtension = "backup";
+  # home-manager.useUserPackages = true;
   system.stateVersion = "24.11";
 }

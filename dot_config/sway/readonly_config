@@ -44,6 +44,7 @@ bindsym Mod4+Shift+8 move container to workspace number 8
 bindsym Mod4+Shift+9 move container to workspace number 9
 bindsym Mod4+Shift+Down move down
 bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Return exec wezterm start --class floating_terminal
 bindsym Mod4+Shift+Right move right
 bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+a mode Mouse
@@ -131,6 +132,8 @@ bar {
 
 gaps inner 15
 smart_gaps on
+for_window [app_id="floating_terminal"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
 exec lxpolkit &
 
 exec "/nix/store/y4w8mdfh9nlsqf7nikrm7yanw6qghnmf-dbus-1.14.10/bin/dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE NIXOS_OZONE_WL XCURSOR_THEME XCURSOR_SIZE; systemctl --user reset-failed && systemctl --user start sway-session.target && swaymsg -mt subscribe '[]' || true && systemctl --user stop sway-session.target"

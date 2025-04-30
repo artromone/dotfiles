@@ -29,6 +29,11 @@
     obsidian
     zathura
 
+    # Сеть
+    networkmanagerapplet
+    openconnect
+    networkmanager-openconnect
+
     # Wayland компоненты
     mako
     waybar

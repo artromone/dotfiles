@@ -14,21 +14,21 @@
       modifier = "Mod4";
       terminal = "wezterm";
       menu = "wmenu-run";
-      # floating-terminal = "wezterm --class floating-terminal";
-      # window.commands = [
-      #   {
-      #     command = "floating enable";
-      #     criteria = {
-      #       app_id = "floating-terminal";
-      #     };
-      #   }
-      #   {
-      #     command = "floating enable";
-      #     criteria = {
-      #       class = "floating-terminal";
-      #     };
-      #   }
-      # ];
+
+      window.commands = [
+        {
+          command = "floating enable";
+          criteria = {
+            app_id = "floating_terminal";
+          };
+        }
+        {
+    command = "floating enable";
+    criteria = {
+      app_id = "nm-connection-editor";
+    };
+  }
+      ];
 
       # Направления как в vim
       left = "h";
@@ -62,6 +62,7 @@
         in
         {
           # Основные
+          "${modifier}+Shift+Return" = "exec wezterm start --class floating_terminal";
           "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
           "${modifier}+Shift+q" = "kill";
           "${modifier}+d" = "exec ${config.wayland.windowManager.sway.config.menu}";
