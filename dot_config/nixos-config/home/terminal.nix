@@ -31,6 +31,10 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "google-chrome-stable";
+      # GONOSUMDB = "gitlab.services.mts.ru/*";
+      # GOSUMDB = "sum.golang.org https://nexus.services.mts.ru/repository/go-sum/";
+      # GONOPROXY = "gitlab.services.mts.ru/*";
+      # GOPROXY = "https://nexus.services.mts.ru/repository/go-proxy/";
     };
   };
   

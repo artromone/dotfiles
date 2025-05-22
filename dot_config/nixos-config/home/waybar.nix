@@ -208,6 +208,7 @@
           "interval" = 3600;
           "exec" = "wttrbar";
           "return-type" = "json";
+          "on-click" = "exec wdg-open https://yandex.ru/pogoda/ru/saint-petersburg/details";
         };
 
         "custom/media" = {

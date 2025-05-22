@@ -3,7 +3,10 @@
 {
   imports = [
     ./bluetooth.nix
-    ./opengl.nix
     ./video.nix
   ];
+
+  services.thermald.enable = true;
+  services.upower.enable = true;
+  services.auto-cpufreq.enable = true;
 }

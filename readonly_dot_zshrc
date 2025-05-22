@@ -37,7 +37,7 @@ eval "$(atuin init zsh)"
 eval "$(fasd --init posix-alias zsh-hook)"
 
 if [[ $TERM != "dumb" ]]; then
-  eval "$(/nix/store/x1wdp4k85dzrpgkj6nk8a3xs87dazwk8-starship-1.22.1/bin/starship init zsh)"
+  eval "$(/nix/store/2926h9rl6lmri0ycs09yrsvz6xx69jrc-starship-1.23.0/bin/starship init zsh)"
 fi
 
 if [[ $options[zle] = on ]]; then

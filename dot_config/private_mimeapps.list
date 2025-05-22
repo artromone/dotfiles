@@ -3,9 +3,10 @@ application/pdf=zathura-5.desktop;zathura-4.desktop;zathura-3.desktop;zathura-2.
 video/mp4=vlc-2.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
-application/zip=userapp-file-roller-69B542.desktop;userapp-file-roller-ZVBD52.desktop;userapp-ark-F6GW52.desktop;
+application/zip=userapp-file-roller-69B542.desktop;userapp-file-roller-ZVBD52.desktop;userapp-ark-F6GW52.desktop;userapp-unzip-XQBC62.desktop;userapp-unzip-MLUU52.desktop;
 application/x-shellscript=foot.desktop;nvim.desktop;
 text/x-lua=org.qutebrowser.qutebrowser.desktop;
+text/markdown=google-chrome.desktop;
 
 [Default Applications]
 application/pdf=zathura-5.desktop;
@@ -17,4 +18,5 @@ x-scheme-handler/https=qutebrowser.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/unknown=qutebrowser.desktop
-application/zip=userapp-ark-F6GW52.desktop
+application/zip=userapp-unzip-MLUU52.desktop
+text/markdown=google-chrome.desktop

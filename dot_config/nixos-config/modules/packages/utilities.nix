@@ -28,6 +28,7 @@
     gzip
     bzip2
     docker-compose
+    auto-cpufreq
 
     # Wayland утилиты
     grim
@@ -45,5 +46,6 @@
     wttrbar
     chezmoi
     bluetuith
+    upower
   ];
 }

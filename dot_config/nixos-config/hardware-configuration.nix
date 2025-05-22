@@ -22,7 +22,7 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "tun" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
@@ -52,4 +52,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.nvidia.modesetting.enable = true;
+  # hardware.nvidia.open = true;
+  # services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 }

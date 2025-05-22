@@ -4,7 +4,14 @@
   environment.systemPackages = with pkgs; [
     # Браузеры
     qutebrowser
+    # (
     google-chrome
+    # .override {
+    #   commandLineArgs = [
+    #     "--enable-features=UseOzonePlatform"
+    #     "--ozone-platform=wayland"
+    #   ];
+    # })
 
     # Мессенджеры и коммуникация
     telegram-desktop
@@ -27,6 +34,8 @@
     # Офисные приложения
     onlyoffice-bin
     obsidian
+    notesnook
+    anytype
     zathura
 
     # Сеть
@@ -50,7 +59,6 @@
     atuin
 
     # Другие приложения
-    nekoray
     ticktick
     qalculate-qt
     antares

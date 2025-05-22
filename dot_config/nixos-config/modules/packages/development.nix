@@ -1,9 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  services.zabbixAgent.enable = true;
+  services.zabbixAgent.openFirewall = true;
+  services.zabbixAgent.server = "0000monwplook01.mts.ru";
+
   environment.systemPackages = with pkgs; [
-    # Языки программирования и инструменты разработки
+    # Языки программирования
     go
+    golangci-lint
+    go-migrate
     cargo
     gcc
     clang
@@ -26,5 +32,11 @@
 
     # Форматирование
     nixfmt-rfc-style
+
+    # Работа
+    citrix_workspace
+    zabbix.agent
+    envsubst
   ];
 }
+
