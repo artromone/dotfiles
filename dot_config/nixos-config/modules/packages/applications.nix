@@ -35,7 +35,7 @@
     onlyoffice-bin
     obsidian
     notesnook
-    anytype
+    appflowy
     zathura
 
     # Сеть
@@ -47,6 +47,7 @@
     mako
     waybar
     gammastep
+    rofi-wayland
     swaylock-effects
 
     # Терминалы

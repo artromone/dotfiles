@@ -6,6 +6,7 @@
     ./waybar.nix
     ./sway.nix
     ./terminal.nix
+    ./rofi.nix
   ];
 
   home.packages = with pkgs; [

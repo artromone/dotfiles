@@ -62,7 +62,7 @@ bindsym Mod4+Space exec echo -n | dmenu -p "TickTick:" | xargs -0 ticktask && no
 bindsym Mod4+Up focus up
 bindsym Mod4+a wl-kbptr -o modes=floating,click -o mode_floating.source=detect
 bindsym Mod4+b splith
-bindsym Mod4+d exec wmenu-run
+bindsym Mod4+d exec rofi -show drun
 bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen
 bindsym Mod4+h focus left

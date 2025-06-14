@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, nextmeeting, ... }:
 
+let
+  nextmeeting_ = lib.getExe nextmeeting.packages.${pkgs.system}.default;
+in
 {
-
   programs.waybar = {
     enable = true;
     # systemd.enable = true;
@@ -15,16 +17,17 @@
         "modules-left" = [
           "sway/workspaces"
           "sway/mode"
-          "custom/media"
+          # "custom/media"
         ];
         "modules-center" = [
           "privacy"
-          "clock"
           "custom/weather"
+          "clock"
+          "custom/agenda"
         ];
         "modules-right" = [
           "tray"
-          # "custom/clipboard"
+          "custom/clipboard"
           "pulseaudio"
           "bluetooth"
           "network"
@@ -58,24 +61,18 @@
           "spacing" = 10;
         };
 
-        "custom/clipboard" = {
-          "format" = " ";
-          "interval" = "once";
-          "return-type" = "json";
-          "on-click" = "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar";
-          "on-click-right" = "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar";
-          "on-click-middle" = "swaymsg -q exec '$clipboard-del-all'";
-          "exec" = "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)";
-          "exec-if" = "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]";
-          "signal" = 9;
+        "custom/clipboard": {
+          "format"= "📋";
+          "interval"= "once";
+          "on-click"= "cliphist list | dmenu | cliphist decode | wl-copy";
+          "on-click-right"= "cliphist wipe";
         };
-
         "clock" = {
           "format-alt" = "{:%H:%M}";
           "format" = "{:%A, %B %d, %Y (%R)}";
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
           "calendar" = {
-            "mode" = "year";
+            "mode" = "month";
             "mode-mon-col" = 3;
             "weeks-pos" = "left";
             "on-scroll" = 1;
@@ -105,6 +102,15 @@
 
         "cpu" = {
           "format" = "{usage}% ";
+        };
+
+        "custom/agenda" = {
+          "format" = "{}";
+          "exec" = nextmeeting_ + " --max-title-length 30 --waybar";
+          "on-click" = nextmeeting_ + " --open-meet-url";
+          "interval" = 59;
+          "return-type" = "json";
+          "tooltip" = true;
         };
 
         "memory" = {
@@ -151,7 +157,7 @@
         };
 
         "battery#bat2" = {
-          "bat" = "BAT2";
+          "bat" = "BAT1";
         };
 
         "network" = {

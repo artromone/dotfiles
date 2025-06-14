@@ -1,15 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  services.zabbixAgent.enable = true;
-  services.zabbixAgent.openFirewall = true;
-  services.zabbixAgent.server = "0000monwplook01.mts.ru";
+  virtualisation.waydroid.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Языки программирования
     go
     golangci-lint
-    go-migrate
+    (go-migrate.overrideAttrs (oldAttrs: {
+      tags = [ "postgres" ];
+    }))
+    go-mockery
     cargo
     gcc
     clang
@@ -18,6 +19,7 @@
     (python3.withPackages (python-pkgs: with python-pkgs; [ ]))
     nodejs
     nodePackages.npm
+    sqlc
 
     # Инструменты разработки
     git
@@ -25,6 +27,7 @@
     protobuf
     protoc-gen-go
     protoc-gen-go-grpc
+    postman
 
     # Редакторы
     vim
@@ -34,8 +37,6 @@
     nixfmt-rfc-style
 
     # Работа
-    citrix_workspace
-    zabbix.agent
     envsubst
   ];
 }

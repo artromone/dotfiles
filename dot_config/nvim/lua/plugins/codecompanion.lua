@@ -19,7 +19,7 @@ return {
           name = "ollama",
           schema = {
             model = {
-              default = "devstral",
+              default = "smollm2:135m-instruct-q3_K_S",
             },
           },
         })

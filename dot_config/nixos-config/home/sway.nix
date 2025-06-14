@@ -13,7 +13,7 @@
       # Основные переменные
       modifier = "Mod4";
       terminal = "wezterm";
-      menu = "wmenu-run";
+      menu = "rofi -show drun";
 
       window.commands = [
         {
@@ -232,6 +232,16 @@
       gtk = true; # Для корректной работы GTK приложений
     };
   };
+
+  services.cliphist = {
+  enable = true;
+  allowImages = true;  # Включает сохранение изображений
+  extraOptions = [
+    "-max-dedupe-search" "10"
+    "-max-items" "500"    # Максимальное количество элементов в истории
+  ];
+  };
+
 
   # Устанавливаем необходимые пакеты
   home.packages = with pkgs; [

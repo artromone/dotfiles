@@ -4,7 +4,7 @@ video/mp4=vlc-2.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 application/zip=userapp-file-roller-69B542.desktop;userapp-file-roller-ZVBD52.desktop;userapp-ark-F6GW52.desktop;userapp-unzip-XQBC62.desktop;userapp-unzip-MLUU52.desktop;
-application/x-shellscript=foot.desktop;nvim.desktop;
+application/x-shellscript=foot.desktop;nvim.desktop;onlyoffice-desktopeditors.desktop;
 text/x-lua=org.qutebrowser.qutebrowser.desktop;
 text/markdown=google-chrome.desktop;
 
@@ -20,3 +20,4 @@ x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/unknown=qutebrowser.desktop
 application/zip=userapp-unzip-MLUU52.desktop
 text/markdown=google-chrome.desktop
+application/x-shellscript=onlyoffice-desktopeditors.desktop

@@ -7,6 +7,7 @@
     btop
     distrobox
     fasd
+    tldr
     unzip
     lazygit
     lazysql
@@ -18,6 +19,7 @@
     nap
     yamllint
     tailspin
+    gcalcli
 
     # Системные утилиты
     wget
